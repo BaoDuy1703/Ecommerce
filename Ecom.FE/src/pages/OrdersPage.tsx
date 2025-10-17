@@ -103,12 +103,17 @@ export default function OrdersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50 to-amber-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden">
+      <div className="absolute top-0 -left-4 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
+      <div className="absolute top-0 -right-4 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
+      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         {/* Modern Header */}
         <div className="mb-8">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+          <div className="text-center mb-6">
+            {/* Hàng 1: Icon */}
+            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
               <svg
                 className="w-6 h-6 text-orange-600"
                 fill="none"
@@ -123,17 +128,17 @@ export default function OrdersPage() {
                 />
               </svg>
             </div>
-            <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-1">
-                My Orders
-              </h1>
-              <p className="text-gray-600">Track and manage your purchases</p>
-            </div>
+
+            {/* Hàng 2: Tiêu đề */}
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">My Orders</h1>
+
+            {/* Hàng 3: Mô tả */}
+            <p className="text-gray-600">Track and manage your purchases</p>
           </div>
         </div>
 
         {/* Modern Filter Tabs */}
-        <div className="mb-8 flex gap-3">
+        <div className="mb-8 flex gap-3 justify-center">
           {[
             {
               key: "all",

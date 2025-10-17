@@ -140,8 +140,9 @@ export default function AdminProductsPage() {
       <div className="container mx-auto px-4 py-8 relative z-10">
         {/* Modern Header */}
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-4 mb-4 mt-5">
-            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+          <div className="mb-6">
+            {/* Hàng 1: Icon */}
+            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
               <svg
                 className="w-6 h-6 text-orange-600"
                 fill="none"
@@ -162,13 +163,17 @@ export default function AdminProductsPage() {
                 />
               </svg>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+
+            {/* Hàng 2: Tiêu đề */}
+            <h1 className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
               Store Manage
             </h1>
+
+            {/* Hàng 3: Mô tả */}
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Create, edit, and manage your product inventory with ease
+            </p>
           </div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Create, edit, and manage your product inventory with ease
-          </p>
           <button
             onClick={() => {
               setSelectedProduct(null);
@@ -238,7 +243,7 @@ export default function AdminProductsPage() {
                     </td>
                     <td className="px-8 py-6">
                       <span className="text-2xl font-bold text-orange-600">
-                        {product.price.toLocaleString()} VND
+                        ${product.price.toFixed(2)}
                       </span>
                     </td>
                     <td className="px-8 py-6 text-right">

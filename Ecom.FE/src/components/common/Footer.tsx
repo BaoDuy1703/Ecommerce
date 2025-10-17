@@ -5,13 +5,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-orange-900 to-gray-900 text-white mt-auto relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-orange-700 via-orange-800 to-yellow-800 text-white mt-auto relative overflow-hidden flex items-center justify-center">
       {/* Decorative Blobs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div className="container mx-auto px-10 py-5 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 ml-5">
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
@@ -19,12 +19,12 @@ export default function Footer() {
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your one-stop destination for trendy and affordable fashion.
-              Discover the latest styles and exclusive deals! ✨
+              Discover the latest styles and exclusive deals!
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="ml-14">
             <h4 className="font-bold text-lg mb-4 text-orange-300">
               Quick Links
             </h4>
@@ -163,10 +163,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400 mb-4 md:mb-0">
+            <p className="text-sm text-gray-400 mb-4 md:mb-0 ml-3">
               &copy; {currentYear} Ryan Store. All rights reserved. Made with 🧡
             </p>
-            <div className="flex space-x-6 text-sm">
+            <div className="flex space-x-6 text-sm mr-4">
               <Link
                 to="/privacy"
                 className="text-gray-400 hover:text-orange-400 transition-colors"

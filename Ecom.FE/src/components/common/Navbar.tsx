@@ -20,12 +20,11 @@ export default function Navbar() {
     <nav className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="container mx-auto px-0">
         <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 ml-7">
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
                 <img
-                  src="/public/basket.png"
-                  alt="Ryan Store Logo"
+                  src="/basket.png"
                   className="w-10 h-10 group-hover:scale-105 transition-all duration-300"
                 />
               </div>
@@ -158,7 +157,7 @@ export default function Navbar() {
           </div>
 
           {/* User Section - Right Side */}
-          <div className="hidden md:flex items-center flex-shrink-0">
+          <div className="hidden md:flex items-center flex-shrink-0 mr-5">
             {user ? (
               <div className="flex items-center space-x-3">
                 <div className="flex items-center space-x-2">
@@ -168,7 +167,7 @@ export default function Navbar() {
                     </span>
                   </div>
                   <span className="text-sm text-gray-600 font-medium">
-                    Hi, {user.name || user.email}
+                    {user.name || user.email}
                   </span>
                 </div>
                 <Button

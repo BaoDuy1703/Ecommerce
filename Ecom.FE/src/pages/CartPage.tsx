@@ -196,40 +196,48 @@ export default function CartPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50 to-amber-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden">
+      <div className="absolute top-0 -left-4 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
+      <div className="absolute top-0 -right-4 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
+      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         {/* Modern Header */}
         <div className="mb-8">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-orange-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-1">
-                  Shopping Cart
-                </h1>
-                <p className="text-gray-600">Review and checkout your items</p>
-              </div>
+          <div className="text-center mb-6">
+            {/* Hàng 1: Icon */}
+            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-6 h-6 text-orange-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
             </div>
 
-            {cartItems.length > 0 && (
+            {/* Hàng 2: Tiêu đề */}
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+              Shopping Cart
+            </h1>
+
+            {/* Hàng 3: Mô tả */}
+            <p className="text-gray-600">Review and checkout your items</p>
+          </div>
+
+          {/* Clear Cart Button - Separate row */}
+          {cartItems.length > 0 && (
+            <div className="flex justify-center mb-4">
               <button
                 onClick={handleClearCart}
                 disabled={clearCart.isPending}
-                className="px-4 py-2 border border-red-200 text-red-600 hover:bg-red-50 rounded-xl font-medium transition-all duration-300 disabled:opacity-50 flex items-center gap-2"
+                className="px-4 py-2 border bg-red-500 border-red-200 text-white hover:bg-red-600 rounded-xl font-medium transition-all duration-300 disabled:opacity-50 flex items-center gap-2"
               >
                 <svg
                   className="w-4 h-4"
@@ -246,8 +254,8 @@ export default function CartPage() {
                 </svg>
                 Clear Cart
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

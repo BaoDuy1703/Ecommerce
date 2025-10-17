@@ -109,12 +109,17 @@ export default function ProductsPage() {
   const products = data?.items || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50 to-amber-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden">
+      <div className="absolute top-0 -left-4 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
+      <div className="absolute top-0 -right-4 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
+      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         {/* Modern Header */}
         <div className="mb-8">
-          <div className="flex items-center gap-4 mb-6 mt-5">
-            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+          <div className="text-center mb-6 ">
+            {/* Hàng 1: Icon */}
+            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
               <svg
                 className="w-6 h-6 text-orange-600"
                 fill="none"
@@ -129,20 +134,22 @@ export default function ProductsPage() {
                 />
               </svg>
             </div>
-            <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-">
-                Discover Products
-              </h1>
-              <p className="text-gray-600">
-                Find amazing products in our curated marketplace
-              </p>
-            </div>
+
+            {/* Hàng 2: Tiêu đề */}
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+              Products List
+            </h1>
+
+            {/* Hàng 3: Mô tả */}
+            <p className="text-gray-600">
+              Find amazing products in our curated marketplace
+            </p>
           </div>
         </div>
 
         {/* Advanced Search & Filter Bar */}
         <div className="mb-8">
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
+          <div className="bg-white rounded-2xl shadow-lg border-2 border-orange-300 p-6">
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search Input */}
               <div className="flex-1">
@@ -150,7 +157,7 @@ export default function ProductsPage() {
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <svg
-                        className="h-5 w-5 text-gray-400"
+                        className="h-5 w-5 text-gray-400 "
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -167,7 +174,7 @@ export default function ProductsPage() {
                       type="text"
                       value={searchInput}
                       onChange={(e) => setSearchInput(e.target.value)}
-                      placeholder="Search products..."
+                      placeholder="Search"
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-300"
                     />
                     {searchQuery && (

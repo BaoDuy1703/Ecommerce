@@ -7,9 +7,12 @@ export default function HomePage() {
   const { user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden">
+      <div className="absolute top-0 -left-4 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
+      <div className="absolute top-0 -right-4 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
+      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
       {/* Hero Section with Image Banner */}
-      <div className="relative h-[600px] md:h-[700px] overflow-hidden">
+      <div className="relative h-[600px] md:h-[700px] overflow-hidden z-10">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
           <img
@@ -24,7 +27,7 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl ml-5">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white leading-tight animate-fade-in-up animation-delay-200">
               Elevate Your
               <span className="block bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 bg-clip-text text-transparent">
@@ -45,7 +48,7 @@ export default function HomePage() {
                   className="group relative overflow-hidden bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 shadow-2xl hover:shadow-orange-500/50 transform hover:scale-105 transition-all duration-300 px-10 py-5 text-lg font-semibold"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    🛍️ Start Shopping Now
+                    Shopping Now
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
@@ -57,7 +60,7 @@ export default function HomePage() {
                     size="lg"
                     className="border-2 border-white text-white hover:bg-white hover:text-orange-600 backdrop-blur-sm px-10 py-5 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                   >
-                    📦 My Orders
+                    View Orders
                   </Button>
                 </Link>
               ) : (
@@ -164,7 +167,7 @@ export default function HomePage() {
           <div className="flex relative group justify-center items-center">
             <div className="bg-gradient-to-br from-orange-500 to-amber-600 rounded-3xl p-10 text-white shadow-2xl transform group-hover:scale-105 transition-all duration-500">
               <div className="flex items-center mb-6">
-                <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mr-6">
+                <div className="w-20 h-40 bg-white/20 rounded-2xl flex items-center justify-center mr-6">
                   <span className="text-4xl">🎨</span>
                 </div>
                 <div>

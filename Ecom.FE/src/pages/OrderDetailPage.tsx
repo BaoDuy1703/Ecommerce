@@ -26,19 +26,6 @@ export default function OrderDetailPage() {
     }
   };
 
-  const getStatusColor = (status: OrderStatus) => {
-    switch (status) {
-      case "pending":
-        return "bg-gradient-to-r from-yellow-400 to-orange-500 text-white";
-      case "paid":
-        return "bg-gradient-to-r from-green-400 to-emerald-500 text-white";
-      case "failed":
-        return "bg-gradient-to-r from-red-400 to-amber-500 text-white";
-      default:
-        return "bg-gradient-to-r from-gray-400 to-gray-500 text-white";
-    }
-  };
-
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
@@ -100,8 +87,12 @@ export default function OrderDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50 to-amber-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden">
+      <div className="absolute top-0 -left-4 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
+      <div className="absolute top-0 -right-4 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
+      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         {/* Modern Header */}
         <div className="mb-8">
           <button
@@ -124,33 +115,37 @@ export default function OrderDetailPage() {
             <span className="font-semibold">Back to Orders</span>
           </button>
 
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-orange-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-1">
-                  Order Details
-                </h1>
-                <p className="text-gray-600">
-                  Order ID: #{order.id.substring(0, 12)}...
-                </p>
-              </div>
+          <div className="text-center mb-6">
+            {/* Hàng 1: Icon */}
+            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-6 h-6 text-orange-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
             </div>
 
+            {/* Hàng 2: Tiêu đề */}
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+              Order Details
+            </h1>
+
+            {/* Hàng 3: Mô tả */}
+            <p className="text-gray-600">
+              Order ID: #{order.id.substring(0, 12)}...
+            </p>
+          </div>
+
+          {/* Status Badge - Separate row */}
+          <div className="flex justify-center mb-6">
             <div className="flex items-center gap-3">
               <span
                 className={`px-4 py-2 rounded-full text-sm font-semibold shadow-lg transition-all duration-300 ${
@@ -351,7 +346,7 @@ export default function OrderDetailPage() {
                     <span className="text-xl font-bold text-gray-900">
                       Total
                     </span>
-                    <span className="text-2xl font-bold text-orange-600">
+                    <span className="text-2xl font-bold text-green-600">
                       ${order.totalAmount.toLocaleString()} VND
                     </span>
                   </div>
