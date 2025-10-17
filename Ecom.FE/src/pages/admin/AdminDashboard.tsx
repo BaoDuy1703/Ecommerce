@@ -1,7 +1,6 @@
 // src/pages/admin/AdminDashboard.tsx
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-
 export default function AdminDashboard() {
   const navigate = useNavigate()
 
@@ -12,3 +11,8 @@ export default function AdminDashboard() {
 
   return null
 }
+
+
+
+
+

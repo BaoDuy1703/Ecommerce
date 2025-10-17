@@ -8,8 +8,7 @@ export default function PaymentFailPage() {
   const reason = searchParams.get('reason') || 'Payment was not completed'
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
         {/* Fail Icon */}
         <div className="mb-6">
           <div className="mx-auto w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
@@ -65,3 +64,8 @@ export default function PaymentFailPage() {
     </div>
   )
 }
+
+
+
+
+
