@@ -221,7 +221,7 @@ export default function LoginPage() {
             <button
               type="button"
               onClick={() =>
-                setFormData({ email: "admin@test.com", password: "123456" })
+                setFormData({ email: "admin123@gmail.com", password: "123456" })
               }
               className="w-full bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-xl transition"
             >
