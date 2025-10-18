@@ -86,7 +86,7 @@ export default function ProductDetail({
           {/* Price */}
           <div className="mb-6">
             <span className="text-4xl font-bold text-green-600">
-              ${product.price.toFixed(2)}
+              {product.price.toLocaleString()} VND
             </span>
           </div>
 

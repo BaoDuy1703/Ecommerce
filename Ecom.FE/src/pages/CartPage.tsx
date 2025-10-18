@@ -291,7 +291,7 @@ export default function CartPage() {
 
                       <div className="mt-2">
                         <p className="text-2xl font-bold text-orange-600">
-                          ${item.price.toFixed(2)}
+                          {item.price.toLocaleString()} VND
                         </p>
                       </div>
                     </div>
@@ -351,7 +351,7 @@ export default function CartPage() {
                       </div>
 
                       <p className="text-xl font-bold text-gray-900 mt-3">
-                        ${item.lineTotal.toFixed(2)}
+                        {item.lineTotal.toLocaleString()} VND
                       </p>
                     </div>
                   </div>
@@ -393,14 +393,14 @@ export default function CartPage() {
                       Subtotal ({cartItems.length} items)
                     </span>
                     <span className="font-bold">
-                      ${(cart?.totalAmount || 0).toFixed(2)}
+                      {(cart?.totalAmount || 0).toLocaleString()} VND
                     </span>
                   </div>
 
                   <div className="flex justify-between text-gray-700">
                     <span className="font-medium">Tax (10%)</span>
                     <span className="font-bold">
-                      ${calculateTax().toFixed(2)}
+                      {calculateTax().toLocaleString()} VND
                     </span>
                   </div>
 
@@ -431,7 +431,7 @@ export default function CartPage() {
                       Total
                     </span>
                     <span className="text-2xl font-bold text-orange-600">
-                      ${calculateTotal().toFixed(2)}
+                      {calculateTotal().toLocaleString()} VND
                     </span>
                   </div>
                 </div>

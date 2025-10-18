@@ -252,11 +252,11 @@ export default function OrderDetailPage() {
                           ×
                           <span className="font-semibold">
                             {" "}
-                            ${item.unitPrice.toLocaleString()} VND
+                            {item.unitPrice.toLocaleString()} VND
                           </span>
                         </p>
                         <p className="text-lg font-bold text-orange-600 mt-2">
-                          Subtotal: ${item.lineTotal.toLocaleString()} VND
+                          Subtotal: {item.lineTotal.toLocaleString()} VND
                         </p>
                       </div>
                     </div>
@@ -347,7 +347,7 @@ export default function OrderDetailPage() {
                       Total
                     </span>
                     <span className="text-2xl font-bold text-green-600">
-                      ${order.totalAmount.toLocaleString()} VND
+                      {order.totalAmount.toLocaleString()} VND
                     </span>
                   </div>
                 </div>

@@ -11,7 +11,7 @@ export const productsApi = {
     })
     if (category) params.append('category', category)
     
-    const response = await apiClient.get<PaginatedResponse<Product>>(`/products?${params}`)
+    const response = await apiClient.get<PaginatedResponse<Product>>(`/products/all?${params}`)
     return response.data
   },
 

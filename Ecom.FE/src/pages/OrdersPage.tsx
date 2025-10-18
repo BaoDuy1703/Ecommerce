@@ -304,7 +304,7 @@ export default function OrdersPage() {
                           : order.status}
                       </span>
                       <span className="text-2xl font-bold text-orange-600">
-                        ${order.totalAmount.toFixed(2)}
+                        {order.totalAmount.toLocaleString()} VND
                       </span>
                     </div>
                   </div>
@@ -347,7 +347,7 @@ export default function OrdersPage() {
                             ×
                             <span className="font-semibold">
                               {" "}
-                              ${item.unitPrice.toFixed(2)}
+                              {item.unitPrice.toLocaleString()} VND
                             </span>
                           </p>
                         </div>

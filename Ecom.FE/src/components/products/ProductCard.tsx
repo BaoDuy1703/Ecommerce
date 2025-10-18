@@ -59,7 +59,7 @@ export default function ProductCard({
           {/* Row 3: Price */}
           <div className="flex items-center justify-center gap-2">
             <span className="text-xl font-bold text-green-600">
-              ${product.price.toFixed(2)}
+              {product.price.toLocaleString()} VND
             </span>
           </div>
 

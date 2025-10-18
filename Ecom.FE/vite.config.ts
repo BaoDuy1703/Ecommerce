@@ -10,7 +10,7 @@ export default defineConfig({
     proxy: {
       // Proxy API requests to backend to avoid CORS issues in development
       "/api": {
-        target: "https://ecommerce-assign.onrender.com",
+        target: "https://duy-be.onrender.com",
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path, // Keep the /api/v1 path as is

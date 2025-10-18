@@ -183,7 +183,7 @@ export default function LoginPage() {
           <div className="bg-gradient-to-br from-orange-500/90 to-amber-500/90 text-white rounded-3xl p-6 shadow-2xl border border-white/20">
             <div className="text-center mb-4">
               <p className="text-sm text-orange-50">
-                Đây là tài khoản Adminđể thử nghiệm
+                Đây là tài khoản Admin để thử nghiệm
               </p>
             </div>
 
@@ -194,7 +194,7 @@ export default function LoginPage() {
                   <div className="font-semibold">admin123@gmail.com</div>
                 </div>
                 <button
-                  onClick={() => copy("admin@test.com")}
+                  onClick={() => copy("admin123@gmail.com")}
                   className="px-3 py-1 rounded-lg bg-white/15 hover:bg-white/25 transition text-xs"
                   type="button"
                 >

@@ -243,11 +243,11 @@ export default function AdminProductsPage() {
                     </td>
                     <td className="px-8 py-6">
                       <span className="text-2xl font-bold text-orange-600">
-                        ${product.price.toFixed(2)}
+                        {product.price.toLocaleString()} VND
                       </span>
                     </td>
-                    <td className="px-8 py-6 text-right">
-                      <div className="flex justify-end gap-3">
+                    <td className="px-8 py-6">
+                      <div className="flex flex-col gap-3">
                         <button
                           onClick={() => {
                             setSelectedProduct(product);
