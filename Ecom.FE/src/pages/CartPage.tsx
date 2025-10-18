@@ -430,7 +430,7 @@ export default function CartPage() {
                     <span className="text-xl font-bold text-gray-900">
                       Total
                     </span>
-                    <span className="text-2xl font-bold text-orange-600">
+                    <span className="text-2xl font-bold text-green-600">
                       {calculateTotal().toLocaleString()} VND
                     </span>
                   </div>
